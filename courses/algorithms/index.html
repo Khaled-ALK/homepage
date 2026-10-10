@@ -17,19 +17,7 @@
 </head>
 <body class="antialiased pb-12">
 
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-10 shadow-sm">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center h-16 text-sm font-medium text-gray-600">
-                <a href="../../index.html" class="hover:text-indigo-600 transition-colors">Home</a>
-                <span class="mx-2 text-gray-400">/</span>
-                <a href="#" class="hover:text-indigo-600 transition-colors">About</a>
-                <span class="mx-2 text-gray-400">/</span>
-                <a href="../index.html" class="hover:text-indigo-600 transition-colors">Courses (Current)</a>
-                <span class="mx-2 text-gray-400">/</span>
-                <span class="text-gray-900 font-semibold">Algorithms II</span>
-            </div>
-        </div>
-    </nav>
+    <!-- Nav bar has been removed as requested -->
 
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         
@@ -83,9 +71,9 @@
                     <div class="pt-4 border-t border-slate-200">
                         <h3 class="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wider">Coursework & Logistics</h3>
                         <ul class="text-sm text-gray-600 space-y-2">
-                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i> <strong>Exercise Sets (0%):</strong> Weekly problem sets to help you keep up with the material.</li>
-                            <li class="flex items-start"><i class="fa-solid fa-list-check text-blue-500 mt-1 mr-2"></i> <strong>Problem Sets (75%):</strong> 4 major problem sets spread across the quarter. LaTeX write-ups encouraged.</li>
-                            <li class="flex items-start"><i class="fa-solid fa-building-columns text-purple-500 mt-1 mr-2"></i> <strong>Prerequisites:</strong> CS161 (Design and Analysis of Algorithms) or equivalent.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i> <strong>Exercise Sets:</strong> Weekly sets to keep up with the material.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-list-check text-blue-500 mt-1 mr-2"></i> <strong>Problem Sets:</strong> 4 major problem sets. LaTeX write-ups encouraged.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-building-columns text-purple-500 mt-1 mr-2"></i> <strong>Prerequisites:</strong> CS161 or equivalent.</li>
                         </ul>
                     </div>
                 </div>
@@ -139,418 +127,505 @@
 
         <section id="materials" class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
             <div class="bg-slate-800 px-6 py-4 flex justify-between items-center">
-                <h2 class="text-xl font-semibold text-white">Lecture Notes & Schedule</h2>
+                <h2 class="text-xl font-semibold text-white">Course Materials & Submissions</h2>
             </div>
             
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="bg-slate-50 border-b border-gray-200 text-xs uppercase tracking-wider text-gray-500">
-                            <th class="px-6 py-4 font-medium">Lec</th>
+                            <th class="px-6 py-4 font-medium">Session</th>
                             <th class="px-6 py-4 font-medium">Topic</th>
-                            <th class="px-6 py-4 font-medium">Resources</th>
-                            <th class="px-6 py-4 font-medium text-right">Personal Notes</th>
+                            <th class="px-6 py-4 font-medium">Lecture Notes</th>
+                            <th class="px-6 py-4 font-medium">Exercises</th>
+                            <th class="px-6 py-4 font-medium text-right">Problem Sets</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm text-gray-700 divide-y divide-gray-100">
                         
                         <!-- Part I -->
                         <tr class="bg-slate-100/50">
-                            <td colspan="4" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Part I: Combinatorial Optimization</td>
+                            <td colspan="5" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Part I: Combinatorial Optimization</td>
                         </tr>
                         
                         <!-- Lec 1 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">1</td>
-                            <td class="px-6 py-4 font-medium">Course goals. Intro to max flow. Ford-Fulkerson.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 1</span>
+                                    <span class="text-xs text-gray-500 font-normal">Jan 5</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Course goals. Intro to max flow. Ford-Fulkerson.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 2 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2</td>
-                            <td class="px-6 py-4 font-medium">Max-flow/min-cut theorem. Edmonds-Karp. Dinic.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 2</span>
+                                    <span class="text-xs text-gray-500 font-normal">Jan 7</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Max-flow/min-cut theorem. Edmonds-Karp. Dinic.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 1 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 3 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3</td>
-                            <td class="px-6 py-4 font-medium">Maximum flow: push-relabel approach.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 3</span>
+                                    <span class="text-xs text-gray-500 font-normal">Jan 12</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Maximum flow: push-relabel approach.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 4 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4</td>
-                            <td class="px-6 py-4 font-medium">Min s-t cut problem. Image segmentation. Bipartite matching.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 4</span>
+                                    <span class="text-xs text-gray-500 font-normal">Jan 14</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Min s-t cut problem. Image segmentation. Bipartite matching.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 2 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
                         
                         <!-- Lec 5 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">5</td>
-                            <td class="px-6 py-4 font-medium">Min-cost bipartite matching. Hungarian algorithm.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 5</span>
+                                    <span class="text-xs text-gray-500 font-normal">Jan 19</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Min-cost bipartite matching. Hungarian algorithm.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 6 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">6</td>
-                            <td class="px-6 py-4 font-medium">Generalizations: min-cost flow, non-bipartite matching.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 6</span>
+                                    <span class="text-xs text-gray-500 font-normal">Jan 21</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Generalizations: min-cost flow, non-bipartite matching.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 3 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Part II -->
                         <tr class="bg-slate-100/50">
-                            <td colspan="4" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Part II: Linear Programming and Duality</td>
+                            <td colspan="5" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Part II: Linear Programming and Duality</td>
                         </tr>
 
                         <!-- Lec 7 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">7</td>
-                            <td class="px-6 py-4 font-medium">LP Intro & Apps: max flow, linear regression, classifiers.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 7</span>
+                                    <span class="text-xs text-gray-500 font-normal">Jan 26</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">LP Intro & Apps: max flow, linear regression, classifiers.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed" title="Placeholder">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS #1
                                 </span>
                             </td>
                         </tr>
 
                         <!-- Lec 8 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">8</td>
-                            <td class="px-6 py-4 font-medium">LP Duality I: Weak duality, complementary slackness, max-flow/min-cut.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 8</span>
+                                    <span class="text-xs text-gray-500 font-normal">Jan 28</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">LP Duality I: Weak duality, complementary slackness.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 4 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 9 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">9</td>
-                            <td class="px-6 py-4 font-medium">LP Duality II: Strong duality, Farkas's Lemma.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 9</span>
+                                    <span class="text-xs text-gray-500 font-normal">Feb 2</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">LP Duality II: Strong duality, Farkas's Lemma.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 10 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">10</td>
-                            <td class="px-6 py-4 font-medium">Minimax theorem. Algorithms for LP: Simplex, Ellipsoid.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 10</span>
+                                    <span class="text-xs text-gray-500 font-normal">Feb 4</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Minimax theorem. Algorithms for LP: Simplex, Ellipsoid.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 5 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Part III -->
                         <tr class="bg-slate-100/50">
-                            <td colspan="4" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Part III: Online Algorithms</td>
+                            <td colspan="5" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Part III: Online Algorithms</td>
                         </tr>
 
                         <!-- Lec 11 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">11</td>
-                            <td class="px-6 py-4 font-medium">Online decision-making. Regret. Multiplicative weights.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 11</span>
+                                    <span class="text-xs text-gray-500 font-normal">Feb 9</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Online decision-making. Regret. Multiplicative weights.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed" title="Placeholder">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS #2
                                 </span>
                             </td>
                         </tr>
 
                         <!-- Lec 12 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">12</td>
-                            <td class="px-6 py-4 font-medium">MW Apps: Linear classifiers, fast approximate flows.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 12</span>
+                                    <span class="text-xs text-gray-500 font-normal">Feb 11</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">MW Apps: Linear classifiers, fast approximate flows.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 6 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 13 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">13</td>
-                            <td class="px-6 py-4 font-medium">Online algs I: Minimum makespan scheduling, Steiner tree.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 13</span>
+                                    <span class="text-xs text-gray-500 font-normal">Feb 16</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Online algs: Minimum makespan scheduling, Steiner tree.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 14 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">14</td>
-                            <td class="px-6 py-4 font-medium">Online algs II: Optimal online max bipartite matching.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 14</span>
+                                    <span class="text-xs text-gray-500 font-normal">Feb 18</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Online algs: Optimal online max bipartite matching.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 7 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Part IV -->
                         <tr class="bg-slate-100/50">
-                            <td colspan="4" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Part IV: Algorithms for NP-Hard Problems</td>
+                            <td colspan="5" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Part IV: Algorithms for NP-Hard Problems</td>
                         </tr>
 
                         <!-- Lec 15 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">15</td>
-                            <td class="px-6 py-4 font-medium">Approximation Algs: Scheduling, Knapsack, Set Cover.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 15</span>
+                                    <span class="text-xs text-gray-500 font-normal">Feb 23</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Approximation Algs: Scheduling, Knapsack, Set Cover.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed" title="Placeholder">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS #3
                                 </span>
                             </td>
                         </tr>
 
                         <!-- Lec 16 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">16</td>
-                            <td class="px-6 py-4 font-medium">TSP: Christofides's algorithm, ATSP.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 16</span>
+                                    <span class="text-xs text-gray-500 font-normal">Feb 25</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">TSP: Christofides's algorithm, ATSP.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 8 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 17 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">17</td>
-                            <td class="px-6 py-4 font-medium">LP + Approx Algs: LP rounding, primal-dual methods.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 17</span>
+                                    <span class="text-xs text-gray-500 font-normal">Mar 1</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">LP + Approx Algs: LP rounding, primal-dual methods.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 18 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">18</td>
-                            <td class="px-6 py-4 font-medium">Randomized Approx Algs: Hashing, Routing, Chernoff bounds.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 18</span>
+                                    <span class="text-xs text-gray-500 font-normal">Mar 3</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Randomized Approx Algs: Hashing, Routing, Chernoff bounds.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
-                            <td class="px-6 py-4 text-right">
+                            <td class="px-6 py-4">
                                 <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                    <i class="fa-solid fa-plus mr-1"></i> Week 9 Ex.
                                 </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
                         <!-- Lec 19 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">19</td>
-                            <td class="px-6 py-4 font-medium">Beating Brute Force: Fixed-parameter tractability. Exact TSP.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 19</span>
+                                    <span class="text-xs text-gray-500 font-normal">Mar 8</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Beating Brute Force: Fixed-parameter tractability. Exact TSP.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed" title="Placeholder">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS #4
                                 </span>
                             </td>
                         </tr>
 
                         <!-- Lec 20 -->
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">20</td>
-                            <td class="px-6 py-4 font-medium">Max Cut / SDP relaxations.</td>
-                            <td class="px-6 py-4 flex gap-3">
-                                <a href="#" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded">
-                                    <i class="fa-brands fa-youtube mr-1"></i> Video
-                                </a>
-                                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded">
-                                    <i class="fa-regular fa-file-pdf mr-1"></i> Notes
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                                <div class="flex flex-col">
+                                    <span>Lec 20</span>
+                                    <span class="text-xs text-gray-500 font-normal">Mar 10</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">Max Cut / SDP relaxations.</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Notes]
                                 </a>
                             </td>
+                            <td class="px-6 py-4 text-gray-400 italic">
+                                -
+                            </td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add Note
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
