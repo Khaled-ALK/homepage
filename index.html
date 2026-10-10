@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaled Alekasir - Personal Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+        .content-body {
+            font-family: 'Lora', serif;
+        }
+        .content-body h2 {
+            font-family: 'Inter', sans-serif;
+        }
+        .link-hover {
+            text-decoration-color: transparent;
+            transition: text-decoration-color 0.2s ease-in-out;
+        }
+        .link-hover:hover {
+            text-decoration-color: currentColor;
+        }
+    </style>
+</head>
+<body class="antialiased bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300">
+
+    <nav class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800 sticky top-0 z-20 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 text-sm font-medium">
+                <div class="text-gray-900 dark:text-gray-100 font-semibold tracking-wide">
+                    Khaled Alekasir
+                </div>
+                <div class="flex items-center space-x-6 text-gray-600 dark:text-gray-400">
+                    <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors hidden sm:block">About</a>
+                    <a href="#publications" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors hidden sm:block">Publications</a>
+                    <a href="#notes" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors hidden sm:block">Notes</a>
+                    
+                    <!-- Dark Mode Toggle Button -->
+                    <button onclick="toggleTheme()" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 focus:outline-none transition-colors p-2 rounded-full bg-gray-100 dark:bg-slate-800" title="Toggle Theme">
+                        <i class="fa-solid fa-moon dark:hidden text-lg"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-lg text-yellow-400"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 flex flex-col md:flex-row gap-12">
+        
+        <!-- Left Sidebar: Profile Information -->
+        <aside class="md:w-1/3 flex-shrink-0">
+            <div class="sticky top-24">
+                <!-- Profile Image Placeholder -->
+                <img src="https://placehold.co/400x400/f1f5f9/475569?text=Photo" alt="Khaled Alekasir" class="w-48 h-48 rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-md mb-6 mx-auto md:mx-0 transition-colors duration-300">
+                
+                <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1 text-center md:text-left">Khaled Alekasir</h1>
+                <p class="text-indigo-700 dark:text-indigo-400 font-medium mb-4 text-center md:text-left">MSc Student in Mathematics</p>
+                
+                <div class="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-6 text-center md:text-left">
+                    <p><i class="fa-solid fa-building-columns w-5 text-gray-400 dark:text-gray-500"></i> Saarland University</p>
+                    <p><i class="fa-solid fa-location-dot w-5 text-gray-400 dark:text-gray-500"></i> Saarbrücken, Germany</p>
+                </div>
+
+                <!-- Contact Links (Icons Only) -->
+                <div class="flex justify-center md:justify-start gap-5 border-t border-gray-100 dark:border-slate-800 pt-6">
+                    <a href="mailto:khaledalekasirut@gmail.com" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-transform hover:scale-110" title="Email">
+                        <i class="fa-solid fa-envelope text-2xl"></i>
+                    </a>
+                    <a href="https://khaled-alk.github.io/" target="_blank" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-transform hover:scale-110" title="GitHub">
+                        <i class="fa-brands fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/khaled-alekasir-b163291b7/" target="_blank" class="text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-transform hover:scale-110" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <article class="md:w-2/3 content-body text-gray-800 dark:text-gray-300">
+            
+            <section id="about" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b-2 border-gray-100 dark:border-slate-800">About Me</h2>
+                <p class="mb-4">
+                    I am a Master's student in Mathematics at <a href="https://www.uni-saarland.de/en/home.html" target="_blank" class="text-indigo-600 dark:text-indigo-400 font-medium underline link-hover">Saarland University</a>. My academic journey is driven by a deep fascination with the mathematical foundations of learning and decision-making processes. 
+                </p>
+                <p>
+                    Currently, my focus lies at the intersection of optimization, game theory, and machine learning. I am particularly interested in understanding the theoretical guarantees of algorithms operating in uncertain environments.
+                </p>
+            </section>
+
+            <section id="research-interests" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b-2 border-gray-100 dark:border-slate-800">Research Interests</h2>
+                <ul class="list-none space-y-3">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-angle-right text-indigo-400 dark:text-indigo-500 mt-1.5 mr-3 text-sm"></i>
+                        <span><strong class="text-gray-900 dark:text-gray-200">Theoretical Reinforcement Learning:</strong> Bandit algorithms, MDPs, value iteration, and exploration strategies.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-angle-right text-indigo-400 dark:text-indigo-500 mt-1.5 mr-3 text-sm"></i>
+                        <span><strong class="text-gray-900 dark:text-gray-200">Algorithmic Game Theory:</strong> Minimax theorems, no-regret learning, and equilibria in games.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-angle-right text-indigo-400 dark:text-indigo-500 mt-1.5 mr-3 text-sm"></i>
+                        <span><strong class="text-gray-900 dark:text-gray-200">Convex Optimization:</strong> Linear programming, duality, and their applications in machine learning paradigms.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="publications" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b-2 border-gray-100 dark:border-slate-800">Publications</h2>
+                <div class="bg-gray-50 dark:bg-slate-800/50 rounded-lg p-6 border border-gray-100 dark:border-slate-800 text-center text-gray-500 dark:text-gray-400 italic">
+                    Currently working on exciting research. Publications will be listed here soon.
+                </div>
+            </section>
+
+            <section id="notes" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b-2 border-gray-100 dark:border-slate-800">Notes & Study Pages</h2>
+                <p class="mb-6">
+                    I maintain detailed notes and study pages for the courses and topics I am actively researching. These serve as a repository for my summaries, proofs, and exercise solutions.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    
+                    <!-- RL Course Card -->
+                    <a href="rl_course.html" class="block group">
+                        <div class="h-full border border-gray-200 dark:border-slate-700 rounded-xl p-5 hover:border-indigo-300 dark:hover:border-indigo-500 hover:shadow-md transition-all bg-slate-50/50 dark:bg-slate-800/80">
+                            <div class="text-indigo-500 dark:text-indigo-400 mb-3 group-hover:-translate-y-1 transition-transform">
+                                <i class="fa-solid fa-robot text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 dark:text-gray-100 font-sans text-lg mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Foundations of RL</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 font-sans leading-relaxed">
+                                Independent study notes based on Chi Jin's Princeton course. Covers MDPs, bandits, and large state space approximations.
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- Algorithms Card -->
+                    <a href="#" class="block group">
+                        <div class="h-full border border-gray-200 dark:border-slate-700 rounded-xl p-5 hover:border-indigo-300 dark:hover:border-indigo-500 hover:shadow-md transition-all bg-slate-50/50 dark:bg-slate-800/80">
+                            <div class="text-indigo-500 dark:text-indigo-400 mb-3 group-hover:-translate-y-1 transition-transform">
+                                <i class="fa-solid fa-network-wired text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 dark:text-gray-100 font-sans text-lg mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">A Second Course in Algorithms</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 font-sans leading-relaxed">
+                                Notes on combinatorial optimization, LP duality, and multiplicative weights (Stanford CS261).
+                            </p>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="border-t border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-900 mt-12 py-8 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500 dark:text-gray-400 font-sans">
+            &copy; 2026 Khaled Alekasir. Designed with minimal aesthetic.
+        </div>
+    </footer>
+
+    <script>
+        // Check local storage or system preference for dark mode
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Toggle Theme Function
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+</body>
+</html>
