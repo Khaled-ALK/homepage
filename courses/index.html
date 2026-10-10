@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses & Notes | Khaled Alekasir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .theme-transition { transition: background-color 0.3s, color 0.3s; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 theme-transition min-h-screen">
+    
+    <div class="max-w-3xl mx-auto px-6 py-12">
+        
+        <!-- Header & Back Button -->
+        <header class="flex justify-between items-center mb-12">
+            <a href="../index.html" class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">
+                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Home
+            </a>
+            
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none">
+                <!-- Sun Icon -->
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+                </svg>
+                <!-- Moon Icon -->
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Page Title -->
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold tracking-tight mb-3">Coursework & Notes</h1>
+            <p class="text-gray-600 dark:text-gray-400 text-lg">
+                A structured archive of formal mathematical derivations, lecture notes, and exercise solutions from my Master's studies.
+            </p>
+        </div>
+
+        <!-- Course List -->
+        <div class="space-y-6">
+            
+            <!-- RL Course Card -->
+            <a href="./rl/index.html" class="block group bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        Foundations of Reinforcement Learning
+                    </h2>
+                    <span class="text-xs font-medium px-2.5 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full">Active</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    Markov Decision Processes, Value Iteration, Bandit Algorithms (UCB, LinUCB), and Q-learning convergence proofs. Based on resources including Tor Lattimore's texts and Chi Jin's lectures.
+                </p>
+                <div class="flex items-center text-sm text-blue-600 dark:text-blue-400 font-medium">
+                    View Course Notes
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Neural Networks Placeholder Card -->
+            <div class="block bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700 border-dashed opacity-75">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-semibold text-gray-500 dark:text-gray-400">
+                        Neural Networks: Theory and Implementation
+                    </h2>
+                    <span class="text-xs font-medium px-2.5 py-1 bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded-full">Winter 2026/2027</span>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">
+                    Mathematical foundations of deep learning architectures, formal errata notes, and implementation paradigms. (Coming soon)
+                </p>
+            </div>
+
+            <!-- Optimization Placeholder Card -->
+            <div class="block bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700 border-dashed opacity-75">
+                <div class="flex justify-between items-start mb-2">
+                    <h2 class="text-xl font-semibold text-gray-500 dark:text-gray-400">
+                        Linear Optimization & Algorithmic Game Theory
+                    </h2>
+                    <span class="text-xs font-medium px-2.5 py-1 bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded-full">Archive</span>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">
+                    Duality theory, network flows, Max-Flow Min-Cut theorems, and mechanism design (VCG, Myerson's lemma). (Coming soon)
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+            document.documentElement.classList.add('dark');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+            document.documentElement.classList.remove('dark');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
