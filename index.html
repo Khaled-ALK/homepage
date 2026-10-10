@@ -127,43 +127,31 @@
                 </div>
             </section>
 
-            <section id="notes" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b-2 border-gray-100 dark:border-slate-800">Notes & Study Pages</h2>
-                <p class="mb-6">
-                    I maintain detailed notes and study pages for the courses and topics I am actively researching. These serve as a repository for my summaries, proofs, and exercise solutions.
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    
-                    <!-- RL Course Card -->
-                    <a href="rl_course.html" class="block group">
-                        <div class="h-full border border-gray-200 dark:border-slate-700 rounded-xl p-5 hover:border-indigo-300 dark:hover:border-indigo-500 hover:shadow-md transition-all bg-slate-50/50 dark:bg-slate-800/80">
-                            <div class="text-indigo-500 dark:text-indigo-400 mb-3 group-hover:-translate-y-1 transition-transform">
-                                <i class="fa-solid fa-robot text-2xl"></i>
-                            </div>
-                            <h3 class="font-bold text-gray-900 dark:text-gray-100 font-sans text-lg mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Foundations of RL</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 font-sans leading-relaxed">
-                                Independent study notes based on Chi Jin's Princeton course. Covers MDPs, bandits, and large state space approximations.
-                            </p>
-                        </div>
-                    </a>
-
-                    <!-- Algorithms Card -->
-                    <a href="#" class="block group">
-                        <div class="h-full border border-gray-200 dark:border-slate-700 rounded-xl p-5 hover:border-indigo-300 dark:hover:border-indigo-500 hover:shadow-md transition-all bg-slate-50/50 dark:bg-slate-800/80">
-                            <div class="text-indigo-500 dark:text-indigo-400 mb-3 group-hover:-translate-y-1 transition-transform">
-                                <i class="fa-solid fa-network-wired text-2xl"></i>
-                            </div>
-                            <h3 class="font-bold text-gray-900 dark:text-gray-100 font-sans text-lg mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">A Second Course in Algorithms</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 font-sans leading-relaxed">
-                                Notes on combinatorial optimization, LP duality, and multiplicative weights (Stanford CS261).
-                            </p>
-                        </div>
-                    </a>
-
-                </div>
-            </section>
-
+<!-- Notes & Coursework Section -->
+<section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100 border-b border-gray-300 dark:border-gray-700 pb-2">
+        Notes & Coursework
+    </h2>
+    
+    <div class="space-y-6">
+        <!-- RL Course Link -->
+        <div class="group">
+            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-1">
+                <a href="./courses/rl/index.html" class="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center">
+                    Foundations of Reinforcement Learning
+                    <svg class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                A structured archive of personal lecture notes, formal mathematical derivations, and exercise solutions focusing on theoretical reinforcement learning.
+            </p>
+        </div>
+        
+        <!-- You can add more courses here in the future -->
+    </div>
+</section>
         </article>
     </main>
 
