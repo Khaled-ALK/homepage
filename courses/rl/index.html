@@ -13,16 +13,18 @@
             background-color: #f8fafc;
             color: #334155;
         }
-    </style> 
+    </style>
 </head>
 <body class="antialiased pb-12">
+
+    <!-- Nav bar has been removed as requested -->
 
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         
         <header class="mb-10">
             <h1 class="text-4xl font-bold text-gray-900 mb-2 tracking-tight">Foundations of Reinforcement Learning</h1>
             <p class="text-lg text-indigo-700 font-medium border-l-4 border-indigo-500 pl-3">
-                Independent Study & Notes by Khaled Alekasir | Saarland University (Summer 2026)
+                Independent Study & Notes | ECE 524 (Spring 2024) - Chi Jin (Princeton University)
             </p>
         </header>
 
@@ -35,64 +37,52 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             
             <div class="lg:col-span-1">
-                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 h-full">
-                    <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                        <i class="fa-solid fa-bookmark text-indigo-500 mr-2"></i> Main Resources
-                    </h2>
-                    <ul class="space-y-4">
-                        <li>
-                            <p class="text-sm font-semibold text-gray-800">Primary Resource</p>
-                            <a href="https://www.youtube.com/playlist?list=PLYXvCE1En13epbogBmgafC_Yyyk9oQogl" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:underline text-sm flex items-start mt-1">
-                                <i class="fa-brands fa-youtube mt-1 mr-2 text-red-500"></i>
-                                ECE 524: Foundations of Reinforcement Learning (Chi Jin) - Lecture Playlist
-                            </a>
-                        </li>
-                        <li>
-                            <p class="text-sm font-semibold text-gray-800">Course Website</p>
-                            <a href="https://sites.google.com/view/cjin/teaching/ece524-2024-ver" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:underline text-sm flex items-start mt-1">
-                                <i class="fa-solid fa-globe mt-1 mr-2 text-blue-500"></i>
-                                Princeton Course Homepage (Original)
-                            </a>
-                        </li>
-                    </ul>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 h-full flex flex-col gap-6">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fa-solid fa-bookmark text-indigo-500 mr-2"></i> Main Resources
+                        </h2>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-sm font-semibold text-gray-800">Primary Resource</p>
+                                <a href="https://www.youtube.com/playlist?list=PLYXvCE1En13epbogBmgafC_Yyyk9oQogl" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:underline text-sm flex items-start mt-1">
+                                    <i class="fa-brands fa-youtube mt-1 mr-2 text-red-500"></i>
+                                    ECE 524: Foundations of RL (Chi Jin) - Playlist
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-sm font-semibold text-gray-800">Course Website</p>
+                                <a href="https://sites.google.com/view/cjin/teaching/ece524-2024-ver" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:underline text-sm flex items-start mt-1">
+                                    <i class="fa-solid fa-globe mt-1 mr-2 text-blue-500"></i>
+                                    Princeton Course Homepage (Chi Jin)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <div class="lg:col-span-2">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-6 border-b pb-2">Topics Covered</h2>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-6 border-b pb-2">Topics Covered & Schedule</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <h3 class="font-semibold text-indigo-800 mb-2">Part I – Basics and Planning</h3>
+                        <h3 class="font-semibold text-indigo-800 mb-2">Part I – Tabular MDP (Basics)</h3>
                         <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
-                            <li>MDP Basics</li>
-                            <li>Bellman Equations</li>
-                            <li>Planning and Dynamic Programming</li>
+                            <li>Intro, MDP basics and planning</li>
+                            <li>Concentration inequalities & Martingales</li>
+                            <li>Generative models, value iteration</li>
+                            <li>Online RL, exploration, optimism</li>
+                            <li>Minimax lower bound & Offline RL (pessimism)</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="font-semibold text-indigo-800 mb-2">Part II – Concentration & Bandits</h3>
+                        <h3 class="font-semibold text-indigo-800 mb-2">Part II – Advanced Topics</h3>
                         <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
-                            <li>Concentration Inequalities</li>
-                            <li>Martingale Concentration</li>
-                            <li>Exploration in Multi-Armed Bandits (MAB)</li>
-                            <li>Lower Bounds</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-indigo-800 mb-2">Part III – Tabular RL</h3>
-                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
-                            <li>Generative Models</li>
-                            <li>Exploration in RL</li>
-                            <li>Lower Bounds for MDPs</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-indigo-800 mb-2">Part IV – Large State Spaces</h3>
-                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
-                            <li>Least-Squares Value Iteration (LSVI)</li>
-                            <li>Linear MDPs</li>
-                            <li>General Function Approximation</li>
-                            <li>Multiagent RL</li>
+                            <li>Policy optimization</li>
+                            <li>Large state space, linear function approximation</li>
+                            <li>General function approximation</li>
+                            <li>Game theory and multiagent RL</li>
+                            <li>Learning Markov games & POMDPs</li>
                         </ul>
                     </div>
                 </div>
@@ -101,8 +91,7 @@
 
         <section id="materials" class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
             <div class="bg-slate-800 px-6 py-4 flex justify-between items-center">
-                <h2 class="text-xl font-semibold text-white">Course Materials & Submissions</h2>
-                <!-- دکمه Quick Upload پاک شد -->
+                <h2 class="text-xl font-semibold text-white">Lecture Notes & Schedule</h2>
             </div>
             
             <div class="overflow-x-auto">
@@ -112,8 +101,8 @@
                             <th class="px-6 py-4 font-medium">Session</th>
                             <th class="px-6 py-4 font-medium">Topic</th>
                             <th class="px-6 py-4 font-medium">Lecture Notes</th>
-                            <th class="px-6 py-4 font-medium">Exercises</th>
-                            <th class="px-6 py-4 font-medium text-right">Actions</th>
+                            <th class="px-6 py-4 font-medium">Milestones</th>
+                            <th class="px-6 py-4 font-medium text-right">Problem Sets</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm text-gray-700 divide-y divide-gray-100">
@@ -122,19 +111,14 @@
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">1/30</td>
                             <td class="px-6 py-4 font-medium">Introduction, MDP basics</td>
-                            <td class="px-6 py-4 flex flex-col gap-1.5">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
-                                    <i class="fa-solid fa-file-powerpoint mr-2 text-orange-500"></i> [Slides]
-                                </a>
+                            <td class="px-6 py-4">
                                 <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
                                     <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Note 1]
                                 </a>
                             </td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <a href="#" class="text-slate-400 hover:text-indigo-600 transition-colors" title="Update">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </a>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -149,9 +133,7 @@
                             </td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <a href="#" class="text-slate-400 hover:text-indigo-600 transition-colors" title="Update">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </a>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -166,9 +148,7 @@
                             </td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <a href="#" class="text-slate-400 hover:text-indigo-600 transition-colors" title="Update">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </a>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -179,9 +159,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -192,9 +170,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -205,9 +181,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -218,9 +192,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -231,9 +203,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -242,10 +212,10 @@
                             <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/29</td>
                             <td class="px-6 py-4">Exploration in RL</td>
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
-                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 1 due</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 1
                                 </span>
                             </td>
                         </tr>
@@ -257,9 +227,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -270,9 +238,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -281,10 +247,10 @@
                             <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3/21</td>
                             <td class="px-6 py-4">Offline RL</td>
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
-                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 2 due</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 2
                                 </span>
                             </td>
                         </tr>
@@ -296,9 +262,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -309,9 +273,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -320,10 +282,10 @@
                             <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/2</td>
                             <td class="px-6 py-4">Exploration in Large State Space</td>
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
-                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 3 due</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 3
                                 </span>
                             </td>
                         </tr>
@@ -335,9 +297,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -348,9 +308,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -359,10 +317,10 @@
                             <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/11</td>
                             <td class="px-6 py-4">Multiagent Reinforcement Learning</td>
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
-                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 4 due</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 4
                                 </span>
                             </td>
                         </tr>
@@ -374,9 +332,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -387,9 +343,7 @@
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
@@ -398,10 +352,10 @@
                             <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/25</td>
                             <td class="px-6 py-4">Partially Observable Reinforcement Learning I</td>
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
-                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 5 due</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 5
                                 </span>
                             </td>
                         </tr>
@@ -409,13 +363,11 @@
                         <!-- 5/2 -->
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">5/2</td>
-                            <td class="px-6 py-4">Partially Observable Reinforcement Learning II</td>
+                            <td class="px-6 py-4 font-medium">Partially Observable Reinforcement Learning II</td>
                             <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
                             <td class="px-6 py-4 text-gray-400 italic">-</td>
                             <td class="px-6 py-4 text-right">
-                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded" title="Placeholder">
-                                    <i class="fa-solid fa-plus mr-1"></i> Add
-                                </span>
+                                <span class="text-gray-400 italic">-</span>
                             </td>
                         </tr>
 
