@@ -1,151 +1,391 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses & Notes | Khaled Alekasir</title>
+    <title>Foundations of Reinforcement Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .theme-transition { transition: background-color 0.3s, color 0.3s; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 theme-transition min-h-screen">
-    
-    <div class="max-w-3xl mx-auto px-6 py-12">
+<body class="antialiased pb-12">
+
+    <!-- Nav bar has been removed as requested -->
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         
-        <!-- Header & Back Button -->
-        <header class="flex justify-between items-center mb-12">
-            <a href="../index.html" class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">
-                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                </svg>
-                Back to Home
-            </a>
-            
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none">
-                <!-- Sun Icon -->
-                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
-                </svg>
-                <!-- Moon Icon -->
-                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                </svg>
-            </button>
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2 tracking-tight">Foundations of Reinforcement Learning</h1>
+            <p class="text-lg text-indigo-700 font-medium border-l-4 border-indigo-500 pl-3">
+                Independent Study & Notes | ECE 524 (Spring 2024) - Chi Jin (Princeton University)
+            </p>
         </header>
 
-        <!-- Page Title -->
-        <div class="mb-12">
-            <h1 class="text-4xl font-bold tracking-tight mb-3">Coursework & Notes</h1>
-            <p class="text-gray-600 dark:text-gray-400 text-lg">
-                A structured archive of formal mathematical derivations, lecture notes, and exercise solutions from my Master's studies.
+        <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-10 leading-relaxed text-gray-700 text-lg">
+            <p>
+                Recently, I've been heavily focused on theoretical reinforcement learning, particularly bandit algorithms, Markov decision processes, and value iteration frameworks. I became curious about the convergence proofs and theoretical guarantees behind UCB, LinUCB, Fitted Q-Iteration, LSVI-UCB, and linear MDPs. To solidify my understanding, I am following this comprehensive course, which brings together concentration inequalities, theoretical RL exploration, and large state space approximations into one coherent framework.
             </p>
-        </div>
+        </section>
 
-        <!-- Course List -->
-        <div class="space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             
-            <!-- RL Course Card -->
-            <a href="./rl/index.html" class="block group bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all">
-                <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Foundations of Reinforcement Learning
-                    </h2>
-                    <span class="text-xs font-medium px-2.5 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full">Active</span>
+            <div class="lg:col-span-1">
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 h-full flex flex-col gap-6">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fa-solid fa-bookmark text-indigo-500 mr-2"></i> Main Resources
+                        </h2>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-sm font-semibold text-gray-800">Primary Resource</p>
+                                <a href="https://www.youtube.com/playlist?list=PLYXvCE1En13epbogBmgafC_Yyyk9oQogl" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:underline text-sm flex items-start mt-1">
+                                    <i class="fa-brands fa-youtube mt-1 mr-2 text-red-500"></i>
+                                    ECE 524: Foundations of RL (Chi Jin) - Playlist
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-sm font-semibold text-gray-800">Course Website</p>
+                                <a href="https://sites.google.com/view/cjin/teaching/ece524-2024-ver" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:underline text-sm flex items-start mt-1">
+                                    <i class="fa-solid fa-globe mt-1 mr-2 text-blue-500"></i>
+                                    Princeton Course Homepage (Chi Jin)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pt-4 border-t border-slate-200">
+                        <h3 class="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wider">Coursework & Logistics</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start"><i class="fa-solid fa-list-check text-blue-500 mt-1 mr-2"></i> <strong>Problem Sets (60%):</strong> 5 problem sets covering tabular MDPs and advanced theoretical topics.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-file-lines text-indigo-500 mt-1 mr-2"></i> <strong>Final Exam (40%):</strong> Comprehensive evaluation on theorems and proofs.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-ban text-red-500 mt-1 mr-2"></i> <strong>Policy:</strong> No late homework accepted.</li>
+                        </ul>
+                    </div>
                 </div>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    Markov Decision Processes, Value Iteration, Bandit Algorithms (UCB, LinUCB), and Q-learning convergence proofs. Based on resources including Tor Lattimore's texts and Chi Jin's lectures.
-                </p>
-                <div class="flex items-center text-sm text-blue-600 dark:text-blue-400 font-medium">
-                    View Course Notes
-                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                </div>
-            </a>
-
-            <!-- Algorithms Course Card -->
-            <a href="./algorithms/index.html" class="block group bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-md transition-all">
-                <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        A Second Course in Algorithms
-                    </h2>
-                    <span class="text-xs font-medium px-2.5 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full">Completed</span>
-                </div>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                    Combinatorial optimization, linear programming duality, multiplicative weights, and approximation algorithms. Based on Tim Roughgarden's Stanford CS261.
-                </p>
-                <div class="flex items-center text-sm text-blue-600 dark:text-blue-400 font-medium">
-                    View Course Notes
-                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                </div>
-            </a>
-
-            <!-- Neural Networks Placeholder Card -->
-            <div class="block bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-700 border-dashed opacity-75">
-                <div class="flex justify-between items-start mb-2">
-                    <h2 class="text-xl font-semibold text-gray-500 dark:text-gray-400">
-                        Neural Networks: Theory and Implementation
-                    </h2>
-                    <span class="text-xs font-medium px-2.5 py-1 bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300 rounded-full">Winter 2026/2027</span>
-                </div>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">
-                    Mathematical foundations of deep learning architectures, formal errata notes, and implementation paradigms. (Coming soon)
-                </p>
             </div>
 
-        </div> <!-- End of Course List -->
-    </div> <!-- End of Max-Width Container -->
+            <div class="lg:col-span-2">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-6 border-b pb-2">Topics Covered & Schedule</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-indigo-800 mb-2">Part I – Tabular MDP (Basics)</h3>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
+                            <li>Intro, MDP basics and planning</li>
+                            <li>Concentration inequalities & Martingales</li>
+                            <li>Generative models, value iteration</li>
+                            <li>Online RL, exploration, optimism</li>
+                            <li>Minimax lower bound & Offline RL (pessimism)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-indigo-800 mb-2">Part II – Advanced Topics</h3>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
+                            <li>Policy optimization</li>
+                            <li>Large state space, linear function approximation</li>
+                            <li>General function approximation</li>
+                            <li>Game theory and multiagent RL</li>
+                            <li>Learning Markov games & POMDPs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <!-- Theme Toggle Script -->
-    <script>
-        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-        
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            themeToggleLightIcon.classList.remove('hidden');
-            document.documentElement.classList.add('dark');
-        } else {
-            themeToggleDarkIcon.classList.remove('hidden');
-            document.documentElement.classList.remove('dark');
-        }
+        <section id="materials" class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="bg-slate-800 px-6 py-4 flex justify-between items-center">
+                <h2 class="text-xl font-semibold text-white">Lecture Notes & Schedule</h2>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-gray-200 text-xs uppercase tracking-wider text-gray-500">
+                            <th class="px-6 py-4 font-medium">Session</th>
+                            <th class="px-6 py-4 font-medium">Topic</th>
+                            <th class="px-6 py-4 font-medium">Lecture Notes</th>
+                            <th class="px-6 py-4 font-medium">Milestones</th>
+                            <th class="px-6 py-4 font-medium text-right">Problem Sets</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-gray-700 divide-y divide-gray-100">
+                        
+                        <!-- 1/30 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">1/30</td>
+                            <td class="px-6 py-4 font-medium">Introduction, MDP basics</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Note 1]
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
 
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', function() {
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
-            } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
-            }
-        });
-    </script>
+                        <!-- 2/1 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/1</td>
+                            <td class="px-6 py-4 font-medium">Bellman equations</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Note 2]
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 2/6 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/6</td>
+                            <td class="px-6 py-4 font-medium">Planning</td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                    <i class="fa-regular fa-file-pdf mr-2 text-red-500"></i> [Note 3]
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 2/8 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/8</td>
+                            <td class="px-6 py-4">Concentration inequalities</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 2/15 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/15</td>
+                            <td class="px-6 py-4">Martingale concentrations</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 2/20 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/20</td>
+                            <td class="px-6 py-4">Generative models</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 2/22 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/22</td>
+                            <td class="px-6 py-4">Introduction to exploration</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 2/27 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/27</td>
+                            <td class="px-6 py-4">Exploration in multi-arm bandits</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 2/29 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2/29</td>
+                            <td class="px-6 py-4">Exploration in RL</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 1 due</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 1
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- 3/5 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3/5</td>
+                            <td class="px-6 py-4">Lower bounds for multi-arm bandits</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 3/7 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3/7</td>
+                            <td class="px-6 py-4">Lower bounds for MDPs</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 3/21 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3/21</td>
+                            <td class="px-6 py-4">Offline RL</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 2 due</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 2
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- 3/26 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3/26</td>
+                            <td class="px-6 py-4">RL in Large State Space</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 3/29 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3/29</td>
+                            <td class="px-6 py-4">Least-Squares Value Iteration</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 4/2 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/2</td>
+                            <td class="px-6 py-4">Exploration in Large State Space</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 3 due</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 3
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- 4/4 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/4</td>
+                            <td class="px-6 py-4">General Function Approximation</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 4/9 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/9</td>
+                            <td class="px-6 py-4">Exploration in General Function Approximation</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 4/11 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/11</td>
+                            <td class="px-6 py-4">Multiagent Reinforcement Learning</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 4 due</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 4
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- 4/16 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/16</td>
+                            <td class="px-6 py-4">Two-Player Zero-Sum Games</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 4/23 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/23</td>
+                            <td class="px-6 py-4">Multiplayer General-Sum Games</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                        <!-- 4/25 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4/25</td>
+                            <td class="px-6 py-4">Partially Observable Reinforcement Learning I</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-green-600 font-medium text-xs">Homework 5 due</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded cursor-not-allowed">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS 5
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- 5/2 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">5/2</td>
+                            <td class="px-6 py-4 font-medium">Partially Observable Reinforcement Learning II</td>
+                            <td class="px-6 py-4 text-gray-400 italic">Not uploaded yet</td>
+                            <td class="px-6 py-4 text-gray-400 italic">-</td>
+                            <td class="px-6 py-4 text-right">
+                                <span class="text-gray-400 italic">-</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>
