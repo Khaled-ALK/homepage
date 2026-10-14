@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithmic Game Theory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+    </style>
+</head>
+<body class="antialiased pb-12">
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+        
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2 tracking-tight">Algorithmic Game Theory</h1>
+            <p class="text-lg text-indigo-700 font-medium border-l-4 border-indigo-500 pl-3">
+                Independent Study based on Tim Roughgarden's Stanford CS364A (Fall 2013).
+            </p>
+        </header>
+
+        <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 mb-10 leading-relaxed text-gray-700 text-lg">
+            <p>
+                A broad survey of topics at the interface of theoretical computer science and economics. This course introduces auction and mechanism design with an emphasis on computational efficiency and robustness, and explores the "price of anarchy" with applications to networks.
+            </p>
+            <br>
+            <p>
+                It covers algorithms and complexity theory for learning and computing Nash and market equilibria. The foundational concepts from this course, such as Myerson's Lemma, VCG mechanisms, and regret minimization, provide crucial intuition for both game theory and multi-agent reinforcement learning.
+            </p>
+
+            <hr class="my-6 border-gray-200">
+            <p class="text-sm text-gray-500 italic">
+                <strong>Note:</strong> The solutions provided below are LaTeX transcriptions of my original handwritten work. If you prefer to view the original handwritten scans, you can access the complete folder <a href="https://drive.google.com/drive/folders/1XDSmbUeQdSSZsZSHd0F_J8VFwMRi_U7z?usp=sharing" target="_blank" class="text-indigo-600 hover:text-indigo-800 underline font-medium">here</a>.
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            
+            <div class="lg:col-span-1">
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200 h-full flex flex-col gap-6">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fa-solid fa-bookmark text-indigo-500 mr-2"></i> Main Resources
+                        </h2>
+                        <ul class="space-y-4">
+                            <li>
+                                <p class="text-sm font-semibold text-gray-800">Course Website</p>
+                                <a href="http://timroughgarden.org/f13/f13.html" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:underline text-sm flex items-start mt-1">
+                                    <i class="fa-solid fa-globe mt-1 mr-2 text-blue-500"></i>
+                                    Stanford CS364A - Fall 2013 (Tim Roughgarden)
+                                </a>
+                            </li>
+                            <li>
+                                <p class="text-sm font-semibold text-gray-800">Primary Reference</p>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 hover:underline text-sm flex items-start mt-1">
+                                    <i class="fa-solid fa-book mt-1 mr-2 text-green-600"></i>
+                                    Algorithmic Game Theory (Nisan/Roughgarden/Tardos/Vazirani)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pt-4 border-t border-slate-200">
+                        <h3 class="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wider">Coursework & Logistics</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mt-1 mr-2"></i> <strong>9 Exercise Sets:</strong> Weekly problems to reinforce lectures.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-list-check text-blue-500 mt-1 mr-2"></i> <strong>4 Problem Sets:</strong> Deeper mathematical problems.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-graduation-cap text-purple-500 mt-1 mr-2"></i> <strong>Final Exam:</strong> Take-home evaluation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-6 border-b pb-2">Topics Covered</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-indigo-800 mb-2">Mechanism Design</h3>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
+                            <li>Vickrey auction & Myerson's Lemma</li>
+                            <li>Revenue-Maximizing Auctions</li>
+                            <li>VCG Mechanism & Combinatorial auctions</li>
+                            <li>Sponsored search & Spectrum auctions</li>
+                            <li>Beyond Quasi-Linearity & Stable Matching</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-indigo-800 mb-2">Price of Anarchy (POA)</h3>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
+                            <li>Selfish Routing & Braess's Paradox</li>
+                            <li>Network Over-Provisioning</li>
+                            <li>Smooth Games & Vetta's location games</li>
+                            <li>Best-Case and Strong Nash Equilibria</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-indigo-800 mb-2">Equilibria & Learning</h3>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
+                            <li>Hierarchy of Equilibrium Concepts</li>
+                            <li>Best-Response Dynamics</li>
+                            <li>No-Regret Dynamics (Multiplicative weights)</li>
+                            <li>Swap Regret & Minimax Theorem</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-indigo-800 mb-2">Complexity Theory</h3>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 ml-2">
+                            <li>Pure NE and PLS-Completeness</li>
+                            <li>Mixed NE and PPAD-Completeness</li>
+                            <li>Routing and congestion games</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section id="materials" class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="bg-slate-800 px-6 py-4 flex justify-between items-center">
+                <h2 class="text-xl font-semibold text-white">Course Materials & Submissions</h2>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-gray-200 text-xs uppercase tracking-wider text-gray-500">
+                            <th class="px-6 py-4 font-medium">Lec</th>
+                            <th class="px-6 py-4 font-medium">Topic / Sub-topics</th>
+                            <th class="px-6 py-4 font-medium">Materials</th>
+                            <th class="px-6 py-4 font-medium">Exercises</th>
+                            <th class="px-6 py-4 font-medium text-right">Problem Sets</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-gray-700 divide-y divide-gray-100">
+                        
+                        <!-- Part I / Week 1-2 -->
+                        <tr class="bg-slate-100/50">
+                            <td colspan="5" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Mechanism Design Basics</td>
+                        </tr>
+
+                        <!-- Lec 1 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">1</td>
+                            <td class="px-6 py-4">Introduction. Selfish routing. Braess's Paradox.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 2 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">2</td>
+                            <td class="px-6 py-4">Mechanism Design Basics. Vickrey auction. DSIC implementations.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 9/25, Due: 10/2">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 1
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 3 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">3</td>
+                            <td class="px-6 py-4">Myerson's Lemma. Single-parameter DSIC.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 4 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">4</td>
+                            <td class="px-6 py-4">Algorithmic Mechanism Design. Knapsack auctions. Revelation Principle.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 10/2, Due: 10/9">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 2
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 5 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">5</td>
+                            <td class="px-6 py-4">Revenue-Maximizing Auctions. Bayesian optimal auctions.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-3 py-1.5 rounded hover:bg-slate-100 transition-colors" title="Out: 9/25, Due: 10/11">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS #1
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Lec 6 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">6</td>
+                            <td class="px-6 py-4">Simple Near-Optimal Auctions. Prophet Inequality. Bulow-Klemperer.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 10/9, Due: 10/16">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 3
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Part II: Advanced MD & Matching -->
+                        <tr class="bg-slate-100/50">
+                            <td colspan="5" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Multi-parameter & Matching</td>
+                        </tr>
+
+                        <!-- Lec 7 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">7</td>
+                            <td class="px-6 py-4">VCG Mechanism. Multi-parameter MD. Combinatorial auctions.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 8 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">8</td>
+                            <td class="px-6 py-4">Spectrum Auctions. Simultaneous ascending, package bidding.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 10/16, Due: 10/23">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 4
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 9 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">9</td>
+                            <td class="px-6 py-4">Beyond Quasi-Linearity. Clinching auction for budgets. Top trading cycle.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 10 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">10</td>
+                            <td class="px-6 py-4">Kidney Exchange. Stable Matching.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 10/23, Due: 10/30">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 5
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-3 py-1.5 rounded hover:bg-slate-100 transition-colors" title="Out: 10/9, Due: 10/25">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS #2
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Part III: POA -->
+                        <tr class="bg-slate-100/50">
+                            <td colspan="5" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Price of Anarchy & Equilibria</td>
+                        </tr>
+
+                        <!-- Lec 11 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">11</td>
+                            <td class="px-6 py-4">Selfish Routing and the POA. Tight bounds for cost functions.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 12 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">12</td>
+                            <td class="px-6 py-4">Network Over-Provisioning. Bicriteria bound for routing.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 10/30, Due: 11/6">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 6
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 13 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">13</td>
+                            <td class="px-6 py-4">Hierarchy of Equilibrium Concepts. Potential functions.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 14 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">14</td>
+                            <td class="px-6 py-4">Smooth Games. Vetta's location games. CCE bounds.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 11/6, Due: 11/13">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 7
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-3 py-1.5 rounded hover:bg-slate-100 transition-colors" title="Out: 10/23, Due: 11/8">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS #3
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Lec 15 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">15</td>
+                            <td class="px-6 py-4">Best-Case and Strong Nash Equilibria. Price of stability.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Part IV: Dynamics & Complexity -->
+                        <tr class="bg-slate-100/50">
+                            <td colspan="5" class="px-6 py-2 text-xs font-semibold text-indigo-800 uppercase tracking-wider">Dynamics & Complexity</td>
+                        </tr>
+
+                        <!-- Lec 16 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">16</td>
+                            <td class="px-6 py-4">Best-Response Dynamics in potential games.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 11/13, Due: 11/20">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 8
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 17 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">17</td>
+                            <td class="px-6 py-4">No-Regret Dynamics. Multiplicative weights algorithm.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 18 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">18</td>
+                            <td class="px-6 py-4">Swap Regret; Minimax. Black-box reductions.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-2 py-1 rounded hover:bg-slate-100 transition-colors" title="Out: 11/22, Due: 12/6">
+                                    <i class="fa-solid fa-plus mr-1"></i> Ex Set 9
+                                </a>
+                            </td>
+                            <td class="px-6 py-4 text-right align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-slate-400 text-xs font-medium border border-slate-200 border-dashed bg-gray-50 px-3 py-1.5 rounded hover:bg-slate-100 transition-colors" title="Out: 11/6, Due: 11/22">
+                                    <i class="fa-solid fa-upload mr-1"></i> PS #4
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Lec 19 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">19</td>
+                            <td class="px-6 py-4">Pure NE and PLS-Completeness. Routing & congestion games.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">-</td>
+                        </tr>
+
+                        <!-- Lec 20 -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">20</td>
+                            <td class="px-6 py-4">Mixed NE and PPAD-Completeness. Bimatrix games.</td>
+                            <td class="px-6 py-4 flex flex-col gap-1.5">
+                                <a href="#" target="_blank" class="text-red-600 hover:text-red-800 font-medium flex items-center text-xs bg-red-50 px-2 py-1 rounded w-max"><i class="fa-brands fa-youtube mr-1"></i> Video</a>
+                                <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center text-xs bg-blue-50 px-2 py-1 rounded w-max"><i class="fa-regular fa-file-pdf mr-1"></i> Notes</a>
+                            </td>
+                            <td class="px-6 py-4 align-middle">-</td>
+                            <td class="px-6 py-4 text-right align-middle">
+                                <a href="#" target="_blank" class="inline-flex items-center text-purple-700 text-xs font-medium bg-purple-100 px-3 py-1.5 rounded hover:bg-purple-200 transition-colors" title="Out: 11/20, Due: 12/13">
+                                    <i class="fa-solid fa-star mr-1"></i> Final Exam
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
